@@ -1,0 +1,8 @@
+numpy
+torch
+diffusers
+pillow
+pyyaml
+transformers
+accelerate
+django
