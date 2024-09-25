@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+{% if profile %}
+
+	<h1> {{profile.user.username}}'s gallery </h1>
+
+    <br><br><br>
+
+
+
+	{% if prompts %}
+
+	
+
+		{% for prompt in prompts %}
+
+
+
+        <div class="row">
+            <h3>{{prompt.prompt}}</h3>
+            <div class="col-md-6">
+            <div class="thumbnail">
+              
+                <img src="{{prompt.original_image.url}}" alt="image should show here" style="width:100%">
+                <!-- <div class="caption"> {{prompt.prompt}}
+                </div>
+                    <p></p> -->
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="thumbnail">
+              
+                <img src="/{{prompt.diffused_image}}" alt="image should show here" style="width:100%">
+                <!-- <div class="caption"> {{prompt.prompt}}
+                </div>
+                    <p></p> -->
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+			
+
+            
+
+
+		{% endfor %}
+
+        <br><br><br>
+
+
+	{% endif %}
+
+	<br><br>
+
+
+
+
+	<!-- <div class="row">
+  <div class="col-md-4">
+    <div class="thumbnail">
+
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <img src="{% static 'images/dog.jpg' %}" alt="Lights" style="width:100%">
+        <div class="caption">
+          
+        </div>
+      
+      <p>Prompt</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      
+        <img src="{% static 'images/dog.jpg' %}" alt="Nature" style="width:100%">
+        <div class="caption">
+        </div>
+            <p>Prompt</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      
+        <img src="{% static 'images/dog.jpg' %}" alt="Fjords" style="width:100%">
+        <div class="caption">
+        </div>
+      
+      <p>Lorem ipsum...</p>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="thumbnail">
+      
+        <img src="{% static 'images/dog.jpg' %}" alt="Lights" style="width:100%">
+        <div class="caption">
+          
+        </div>
+      
+      <p>Prompt</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      
+        <img src="{% static 'images/dog.jpg' %}" alt="Nature" style="width:100%">
+        <div class="caption">
+        </div>
+      
+      <p>Prompt</p>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      
+        <img src="{% static 'images/dog.jpg' %}" alt="Fjords" style="width:100%">
+        <div class="caption">
+        </div>
+      
+      <p>Lorem ipsum...</p>
+    </div>
+  </div>
+</div>
+ -->
+<br><br><br>
+
+
+
+
+{% endif %}
+
+	
+
+{% endblock %}

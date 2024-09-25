@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  {% if request.user == prompts.user %}
+
+	<h2> {{prompts.prompt}} </h2>
+
+	<br>
+
+	<div class="row">
+  <div class="col-md-6">
+    <div class="thumbnail">
+
+        
+        <img src="{{prompts.original_image.url}}" alt="Initial Picture" style="width:100%">
+        <div class="caption">
+          Initial Picture
+        </div>
+      
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="thumbnail">
+      
+        <img src="{{prompts.diffused_image}}" alt="problem with url :(" style="width:100%">
+        <div class="caption">
+        </div>
+            Diffused Picture
+            
+    </div>
+  </div>
+  
+</div>
+
+		<!-- prompt: {{prompts.prompt}}
+		| url: {{prompts.original_image.url}}
+		<br>
+
+		<img src="{{prompt.original_image.url}}">
+
+
+		<img src="./outputs/img2img-samples/jacked_gollumjacked_gollum/jacked-gollum-samples.png" alt="why not show?"> -->
+
+
+
+<br>
+<br>
+<br>
+
+  {% endif %}
+
+{% if form %}
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form.as_p}}
+    
+    <button type="submit" class="btn btn-secondary">Diffuse</button>
+</form>
+
+{% endif %}
+
+
+
+{% endblock %}
+
+
+
